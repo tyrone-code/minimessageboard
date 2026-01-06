@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <h1>Welcome to <%= title %>!</h1>
+    <%- res.render("index", { title: "Mini Messageboard" , messages: messages }))%>
+        <h1>Welcome to <%= title %>!</h1>
 </body>
 
 </html>

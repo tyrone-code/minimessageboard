@@ -1,12 +1,12 @@
 const userMessages = [
   {
     text: "Hi there!",
-    user: "Amando",
+    user: "LunarWhisper534",
     added: new Date(),
   },
   {
-    text: "Hello World!",
-    user: "Charles",
+    text: "Hello Everybody!",
+    user: "ObsidianFox3145",
     added: new Date(),
   },
 ];
@@ -22,10 +22,6 @@ router.get("/", function (req, res, next) {
     messages: userMessages,
   });
 });
-
-// router.get("/new", (req, res) => {
-//   res.render("form"); // points to views/form.ejs
-// });
 
 // POST new message
 router.post("/", function (req, res) {

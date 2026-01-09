@@ -9,8 +9,25 @@
 </head>
 
 <body>
-    <%- res.render("index", { title: "Mini Messageboard" , messages: messages }))%>
-        <h1>Welcome to <%= title %>!</h1>
+    <h1>
+        <%= title %>
+    </h1>
+
+    <ul>
+        <% messages.forEach(message=> { %>
+            <li>
+                <p><strong>User:</strong>
+                    <%= message.user %>
+                </p>
+                <p><strong>Message:</strong>
+                    <%= message.text %>
+                </p>
+                <p><strong>Added:</strong>
+                    <%= message.added.toLocaleString() %>
+                </p>
+            </li>
+            <% }) %>
+    </ul>
 </body>
 
 </html>

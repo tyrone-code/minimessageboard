@@ -3,15 +3,12 @@ const app = express();
 const port = 3000;
 
 const indexRouter = require("./routes/index");
+app.use(express.urlencoded({ extended: true }));
 
 // Set EJS as the template engine
 app.set("view engine", "ejs");
 
 app.use("/", indexRouter);
-
-// app.get("/", (req, res) => {
-//   res.render("index", { title: "Home Page" });
-// });
 
 // Start the server
 app.listen(port, () => {

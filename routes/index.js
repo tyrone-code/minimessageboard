@@ -1,4 +1,4 @@
-const messages = [
+const userMessages = [
   {
     text: "Hi there!",
     user: "Amando",
@@ -19,21 +19,20 @@ const router = express.Router();
 router.get("/", function (req, res, next) {
   res.render("index", {
     title: "Mini Messageboard",
-    messages: messages,
+    messages: userMessages,
   });
 });
 
-router.get("/new", (req, res) => {
-  res.render("form"); // points to views/form.ejs
-});
+// router.get("/new", (req, res) => {
+//   res.render("form"); // points to views/form.ejs
+// });
 
 // POST new message
-router.post("/new", function (req, res) {
-  console.log(req.body);
+router.post("/", function (req, res) {
   const messageUser = req.body.messageUser;
   const messageText = req.body.messageText;
 
-  messages.push({
+  userMessages.push({
     text: messageText,
     user: messageUser,
     added: new Date(),

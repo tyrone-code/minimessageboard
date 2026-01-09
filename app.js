@@ -4,6 +4,7 @@ const port = 3000;
 
 const indexRouter = require("./routes/index");
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 // Set EJS as the template engine
 app.set("view engine", "ejs");
